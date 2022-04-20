@@ -2,7 +2,7 @@
  * File: start.test.js
  * Project: testcafe
  * Created: Wednesday, April 6th 2022, 1:34:06 pm
- * Last Modified: Wednesday, April 20th 2022, 3:12:21 pm
+ * Last Modified: Wednesday, April 20th 2022, 3:22:39 pm
  * Copyright © 2022 AMDE Agência
  */
 
@@ -17,6 +17,8 @@ fixture`Upping and running with TestCafe`
   })
   .beforeEach(async t => {
     // Runs before each test
+    // delay in the test, 1 fast => 0.1 slow
+    await t.setTestSpeed(0.1);
   })
   .after(async t => {
     // Cleaning test data
