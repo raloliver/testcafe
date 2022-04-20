@@ -2,7 +2,7 @@
  * File: start.test.js
  * Project: testcafe
  * Created: Wednesday, April 6th 2022, 1:34:06 pm
- * Last Modified: Wednesday, April 20th 2022, 3:34:09 pm
+ * Last Modified: Wednesday, April 20th 2022, 3:49:56 pm
  * Copyright © 2022 AMDE Agência
  */
 
@@ -33,6 +33,14 @@ test('should show the name was input on the capture page', async t => {
   const submitButton = Selector('#submit-button');
   const articleHeaderText = Selector('#article-header').innerText;
 
+  // taking a screenshot (it is possible to override the path)
+  /* 
+  await t.takeScreenshot({
+    fullPage: true
+  });
+  */
+  // it is possible to take a screenshot of one single element
+  // await t.takeElementScreenshot(submitButton);
   // code goes here
   await t.typeText(developerNameInput, 'João');
   // pausing the test (using for debugging purpose)
