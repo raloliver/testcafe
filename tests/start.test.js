@@ -2,7 +2,7 @@
  * File: start.test.js
  * Project: testcafe
  * Created: Wednesday, April 6th 2022, 1:34:06 pm
- * Last Modified: Wednesday, April 20th 2022, 3:26:25 pm
+ * Last Modified: Wednesday, April 20th 2022, 3:34:09 pm
  * Copyright © 2022 AMDE Agência
  */
 
@@ -18,7 +18,7 @@ fixture`Upping and running with TestCafe`
   .beforeEach(async t => {
     // Runs before each test
     // delay in the test, 1 fast => 0.1 slow
-    await t.setTestSpeed(0.1);
+    await t.setTestSpeed(1);
   })
   .after(async t => {
     // Cleaning test data
@@ -29,12 +29,16 @@ fixture`Upping and running with TestCafe`
   });
 
 test('should show the name was input on the capture page', async t => {
+  const developerNameInput = Selector('#developer-name');
+  const submitButton = Selector('#submit-button');
+  const articleHeaderText = Selector('#article-header').innerText;
+
   // code goes here
-  await t.typeText('#developer-name', 'João');
+  await t.typeText(developerNameInput, 'João');
   // pausing the test (using for debugging purpose)
-  await t.wait(3000);
-  await t.click('#submit-button');
+  // await t.wait(3000);
+  await t.click(submitButton);
 
   // assertion
-  await t.expect(Selector('#article-header').innerText).contains('João');
+  await t.expect(articleHeaderText).contains('João');
 });
