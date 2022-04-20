@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome ./tests"
+    "test": "testcafe chrome ./tests",
+    "test:headless": "testcafe chrome:headless ./tests"
   },
   "keywords": [],
   "author": "@raloliver",
