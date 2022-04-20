@@ -2,7 +2,7 @@
  * File: start.test.js
  * Project: testcafe
  * Created: Wednesday, April 6th 2022, 1:34:06 pm
- * Last Modified: Wednesday, April 20th 2022, 3:22:39 pm
+ * Last Modified: Wednesday, April 20th 2022, 3:26:25 pm
  * Copyright © 2022 AMDE Agência
  */
 
@@ -31,6 +31,8 @@ fixture`Upping and running with TestCafe`
 test('should show the name was input on the capture page', async t => {
   // code goes here
   await t.typeText('#developer-name', 'João');
+  // pausing the test (using for debugging purpose)
+  await t.wait(3000);
   await t.click('#submit-button');
 
   // assertion
