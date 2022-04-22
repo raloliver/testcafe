@@ -2,7 +2,7 @@
  * File: start.test.js
  * Project: testcafe
  * Created: Wednesday, April 6th 2022, 1:34:06 pm
- * Last Modified: Friday, April 22nd 2022, 3:37:11 pm
+ * Last Modified: Friday, April 22nd 2022, 3:45:32 pm
  * Copyright © 2022 AMDE Agência
  */
 
@@ -76,4 +76,20 @@ test('should show the name was input on the capture page', async t => {
   // Navigate: t.navigateTo('url')
   // TakeScreenshot : t.takeScreenshot() //  t.takeElementScreenshot()
   // Resize window (specially using on before hook) : t.resizeWindow(800, 600)
+
+  /**
+   * Explore Assertions API
+   */
+  // Deep Equal (value and type are equal): t.expect('foo').eql('foo', 'error message', options)
+  // Not Deep Equal (value and type are not equal): t.expect('foo').notEql('foo')
+  // OK (mark true it value is true): t.expect(true).ok()
+  // Not OK (opposite of OK): t.expect(true).notOk()
+  // Contains (check string value): t.expect('foo').contains('o')
+  // Not contains (opposite of contains): t.expect('foo').notContains('a')
+  // Greater than: t.expect(10).gt(1)
+  // Less than: t.expect(10).gt(10)
+  // Greater and Equal: t.expect(10).gte(10)
+  // Less and Equal: t.expect(10).lte(10)
+  // Within: t.expect(10).within(1, 100)
+  // Without: t.expect(10).notWithin(5, 50)
 });
