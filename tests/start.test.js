@@ -2,7 +2,7 @@
  * File: start.test.js
  * Project: testcafe
  * Created: Wednesday, April 6th 2022, 1:34:06 pm
- * Last Modified: Wednesday, April 20th 2022, 3:49:56 pm
+ * Last Modified: Friday, April 22nd 2022, 1:31:11 pm
  * Copyright © 2022 AMDE Agência
  */
 
@@ -19,6 +19,9 @@ fixture`Upping and running with TestCafe`
     // Runs before each test
     // delay in the test, 1 fast => 0.1 slow
     await t.setTestSpeed(1);
+
+    // Page load timeout
+    await t.setPageLoadTimeout(0);
   })
   .after(async t => {
     // Cleaning test data
@@ -28,6 +31,11 @@ fixture`Upping and running with TestCafe`
     // Runs after each test
   });
 
+/**
+ * SKIP and ONLY methods to skip or only run a single test scenario
+ */
+// it is possible to use .skip to skip a test
+// if you wanna to run only one test, you could use .only
 test('should show the name was input on the capture page', async t => {
   const developerNameInput = Selector('#developer-name');
   const submitButton = Selector('#submit-button');
