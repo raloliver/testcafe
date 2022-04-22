@@ -2,7 +2,7 @@
  * File: start.test.js
  * Project: testcafe
  * Created: Wednesday, April 6th 2022, 1:34:06 pm
- * Last Modified: Friday, April 22nd 2022, 1:31:11 pm
+ * Last Modified: Friday, April 22nd 2022, 1:40:31 pm
  * Copyright © 2022 AMDE Agência
  */
 
@@ -21,6 +21,7 @@ fixture`Upping and running with TestCafe`
     await t.setTestSpeed(1);
 
     // Page load timeout
+    // The 't.setPageLoadTimeout' method is deprecated and will be removed in the  next major release. Use the 'test.timeouts' method to set the 'pageLoadTimeout' instead.
     await t.setPageLoadTimeout(0);
   })
   .after(async t => {
@@ -42,6 +43,9 @@ test('should show the name was input on the capture page', async t => {
   const articleHeaderText = Selector('#article-header').innerText;
 
   // taking a screenshot (it is possible to override the path)
+  /**
+   * at package.json there is a script with "-s" flag that means "--screenshots"
+   */
   /* 
   await t.takeScreenshot({
     fullPage: true
