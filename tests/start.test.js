@@ -2,7 +2,7 @@
  * File: start.test.js
  * Project: testcafe
  * Created: Wednesday, April 6th 2022, 1:34:06 pm
- * Last Modified: Friday, April 22nd 2022, 1:40:31 pm
+ * Last Modified: Friday, April 22nd 2022, 3:37:11 pm
  * Copyright © 2022 AMDE Agência
  */
 
@@ -61,4 +61,19 @@ test('should show the name was input on the capture page', async t => {
 
   // assertion
   await t.expect(articleHeaderText).contains('João');
+
+  /**
+   * Explore Actions API
+   */
+  // Click: t.click('selector', {options})
+  // Double Click: t.doubleClick('selector', {options})
+  // Rigth Click: t.rightClick('selector', {options})
+  // Drag Element: t.drag('selector', 200, 0, {options})
+  // Hover: t.hover('selector', {options})
+  // Select Text: t.selectText('selector', {options})
+  // Input Text: t.text('selector', 'text')
+  // Press key: t.pressKey('key')
+  // Navigate: t.navigateTo('url')
+  // TakeScreenshot : t.takeScreenshot() //  t.takeElementScreenshot()
+  // Resize window (specially using on before hook) : t.resizeWindow(800, 600)
 });
